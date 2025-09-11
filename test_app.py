@@ -1,6 +1,6 @@
 import pytest
 from fastapi.testclient import TestClient
-from transactions_service.app import app
+from app import app
 
 client = TestClient(app)
 
