@@ -1,8 +1,8 @@
 from fastapi import FastAPI, Depends, HTTPException, Query
 from typing import List, Optional
 from sqlalchemy.orm import Session
-from . import models, schemas
-from .database import get_db, engine
+import models, schemas
+from database import get_db, engine
 
 app = FastAPI(title="Transactions Service", version="1.0.0")
 
