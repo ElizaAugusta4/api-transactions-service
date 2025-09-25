@@ -58,18 +58,9 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            sudo apt-get update
-            sudo apt-get install -y git
+            sudo yum install -y git
             rm -rf api-transactions-service
             git clone https://github.com/ElizaAugusta4/api-transactions-service.git
             cd api-transactions-service
             chmod +x ./deploy_k8s.sh
             ./deploy_k8s.sh
-      - name: Verificar SERVER_HOST
-        run: |
-          if [ -z "${{ secrets.SERVER_HOST }}" ]; then
-            echo "SERVER_HOST não está definido"
-            exit 1
-          else
-            echo "SERVER_HOST está definido"
-          fi
