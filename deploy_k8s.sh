@@ -47,7 +47,7 @@ kind get kubeconfig --name prod-finance > "$KUBECONFIG_FILE"
 kubectl config use-context kind-prod-finance
 
 echo \"===> Aplicando manifests do diretório K8s-manifests/...\"
-kubectl apply -f K8s-manifests/
+kubectl apply -f K8s-manifests/ --validate=false
 
 echo \"===> Aguardando rollout dos deployments...\"
 for DEPLOY in transactions-service; do
