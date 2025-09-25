@@ -55,10 +55,4 @@ for DEPLOY in transactions-service; do
   kubectl rollout status deployment/$DEPLOY --timeout=120s
 done
 
-
-
-
-
-
-
-
+echo \"✅ Deploy finalizado com sucesso!\"
