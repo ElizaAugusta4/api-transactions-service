@@ -57,5 +57,8 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            rm -rf api-transactions-service
+            git clone https://github.com/ElizaAugusta4/api-transactions-service.git
+            cd api-transactions-service
             chmod +x ./deploy_k8s.sh
             ./deploy_k8s.sh
