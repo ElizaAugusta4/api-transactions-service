@@ -31,11 +31,11 @@ sudo usermod -aG docker $USER
 
 echo "===> Verificando se o cluster local Kind já existe..."
 
-if kind get clusters | grep -q "^prod-finance$"; then
+if sudo kind get clusters | grep -q "^prod-finance$"; then
   echo "Cluster 'prod-finance' já existe. Pulando criação."
 else
   echo "Criando cluster local com Kind..."
-  kind create cluster --name prod-finance --wait 60s --config kind-config.yaml
+  sudo kind create cluster --name prod-finance --wait 60s --config kind-config.yaml
 fi
 
 mkdir -p $HOME/.kube
