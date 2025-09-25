@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: transactions-service
-          image: <DOCKER_USERNAME>/transactions-service:latest
+          image: elizaaugusta/transactions-service:latest
           ports:
             - containerPort: 8000
           env:
